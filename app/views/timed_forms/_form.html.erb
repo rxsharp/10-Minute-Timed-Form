@@ -1,0 +1,21 @@
+<%= form_for(@timed_form) do |f| %>
+  <% if @timed_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@timed_form.errors.count, "error") %> prohibited this timed_form from being saved:</h2>
+
+      <ul>
+      <% @timed_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :begin %><br>
+    <%= f.text_field :begin %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

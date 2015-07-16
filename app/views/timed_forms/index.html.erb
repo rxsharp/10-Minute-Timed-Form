@@ -1,0 +1,25 @@
+<h1>Listing timed_forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Begin</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timed_forms.each do |timed_form| %>
+      <tr>
+        <td><%= timed_form.begin %></td>
+        <td><%= link_to 'Show', timed_form %></td>
+        <td><%= link_to 'Edit', edit_timed_form_path(timed_form) %></td>
+        <td><%= link_to 'Destroy', timed_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Timed form', new_timed_form_path %>
