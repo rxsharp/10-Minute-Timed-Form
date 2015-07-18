@@ -14,6 +14,9 @@
  *= require_self
  */
 
+#timed_form_begin {
+  display: none;
+}
 
 #ten-countdown {
     /* text-align: center; */

@@ -10,6 +10,14 @@ class TimedFormsController < ApplicationController
   # GET /timed_forms/1
   # GET /timed_forms/1.json
   def show
+    @begin = @timed_form.begin
+    @countdown_remaining = @timed_form.begin
+    
+    a = @begin.split(":")
+    @minutes = a[0].to_i
+    @seconds= a[1].to_i
+    @time_seconds = -(@minutes * 60 + @seconds) + 600
+    @time_format = Time.at(@time_seconds).utc.strftime("%M:%S")
   end
 
   # GET /timed_forms/new
@@ -29,10 +37,8 @@ class TimedFormsController < ApplicationController
     respond_to do |format|
       if @timed_form.save
         format.html { redirect_to @timed_form, notice: 'Timed form was successfully created.' }
-        format.json { render :show, status: :created, location: @timed_form }
       else
         format.html { render :new }
-        format.json { render json: @timed_form.errors, status: :unprocessable_entity }
       end
     end
   end

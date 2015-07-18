@@ -5,5 +5,23 @@
   <%= @timed_form.begin %>
 </p>
 
-<%= link_to 'Edit', edit_timed_form_path(@timed_form) %> |
+<p class="displaytime">
+  This is the remaining time: <%= @countdown_remaining %>
+</p>
+<p class="minutes">
+  Remaining minutes: <%= @minutes %>
+</p>
+
+<p class="seconds">
+  Remaining seconds: <%= @seconds %>
+</p>
+
+<p class="time_completed_seconds">
+  This is the amount it took in seconds: <%= @time_seconds %>
+</p>
+
+<p class="converted_format">
+  This the converted format: <%= @time_format %>
+</p>
+
 <%= link_to 'Back', timed_forms_path %>
