@@ -1,9 +1,9 @@
-<h1>Listing timed_forms</h1>
+<h1>10 Minute Timed Form</h1>
 
-<table>
+<table class = "list">
   <thead>
     <tr>
-      <th>Begin</th>
+      <th>List of Times</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,7 +13,6 @@
       <tr>
         <td><%= timed_form.begin %></td>
         <td><%= link_to 'Show', timed_form %></td>
-        <td><%= link_to 'Edit', edit_timed_form_path(timed_form) %></td>
         <td><%= link_to 'Destroy', timed_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
